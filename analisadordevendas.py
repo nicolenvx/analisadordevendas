@@ -1,5 +1,6 @@
-# PROGRAMA DE ANÁLISE DE VENDAS
-# Dados de vendas 
+# Analisador de Vendas
+
+# Dados de vendas
 vendas = [
     {"produto": "Caderno", "preco": 20.0, "quantidade": 15},
     {"produto": "Caneta", "preco": 4.5, "quantidade": 50},
@@ -15,13 +16,8 @@ for item in vendas:
     subtotal = item["preco"] * item["quantidade"]
     faturamento_total += subtotal
 
-# Calcula o faturamento médio por produto
+# Calcula o faturamento médio por produto ou transação
 faturamento_medio = faturamento_total / len(vendas)
-if len(vendas) > 0:
-    faturamento_medio = faturamento_total / len(vendas)
-else:
-    faturamento_medio = 0
-
 
 # Descobre qual produto vendeu mais unidades
 produto_mais_vendido = ""
@@ -32,11 +28,8 @@ for item in vendas:
         maior_quantidade = item["quantidade"]
         produto_mais_vendido = item["produto"]
 
-
-
 # Mostra os resultados na tela
-print("- RELATÓRIO DE VENDAS COMPLETO -")
+print("--- RELATÓRIO DE VENDAS ---")
 print(f"Faturamento Total: R$ {faturamento_total:.2f}")
 print(f"Produto mais vendido: {produto_mais_vendido} ({maior_quantidade} unidades)")
 print(f"Faturamento Médio: R$ {faturamento_medio:.2f}")
-
